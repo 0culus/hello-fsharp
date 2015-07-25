@@ -17,9 +17,12 @@ let rec fib = function
 [<EntryPoint>]
 let main argv = 
     Console.Write("Enter which Fibonacci number you want: ")
+
     let input = Console.ReadLine()
     let inputParsed : int64 = int64 input
+
     Console.WriteLine("The {0}th Fibonacci number is: {1}", input, (fib inputParsed))
     Console.WriteLine("Press any key to quit...")
-    Console.ReadKey() |> ignore
+
+    Console.ReadKey() |> ignore // wait for a key, but we don't care about it's value, so throw it away
     0 // return an integer exit code
