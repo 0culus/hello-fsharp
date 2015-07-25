@@ -10,15 +10,15 @@
 open System
 
 let rec fib = function
-    | 0 -> 0
-    | 1 -> 1
-    | n -> fib (n - 1) + fib (n - 2)
+    | 0L -> 0L
+    | 1L -> 1L
+    | n -> fib (n - 1L) + fib (n - 2L)
 
 [<EntryPoint>]
 let main argv = 
     Console.Write("Enter which Fibonacci number you want: ")
     let input = Console.ReadLine()
-    let inputParsed : int = int input
+    let inputParsed : int64 = int64 input
     Console.WriteLine("The {0}th Fibonacci number is: {1}", input, (fib inputParsed))
     Console.WriteLine("Press any key to quit...")
     Console.ReadKey() |> ignore
